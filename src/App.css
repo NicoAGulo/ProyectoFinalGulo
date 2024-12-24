@@ -5,12 +5,45 @@
   text-align: center;
 }
 
+.logo-navbar{
+  display: flex;
+  height: 1rem;
+  margin: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
+h1{
+  margin: 1rem;
+  padding: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.911);
+  border-radius: 50px 50px;
+}
+
+h2{
+  display: inline-block;
+  color: white;
+  font-variant:small-caps;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  border-radius: 50px 50px;
+  background-color: rgba(0, 0, 0, 0.678);
+}
+
+h3{
+  background-color: rgba(0, 0, 0, 0.911);
+  color: white;
+}
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }

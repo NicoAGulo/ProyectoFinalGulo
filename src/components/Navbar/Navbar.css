@@ -1,65 +1,30 @@
 .bloque-navbar{
-    top: 0;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
 
-    color: white;
-    background-color: rgba(0, 0, 0, 0.521);
+    display: flex;
+    position: sticky;
 
-    height: 30%;
-    width: 100%;
-
-    .logo-navbar{
-        display: flex;
-        grid-area: 1 / 1 / 2 / 2;
-        overflow: hidden;
-        align-items: center;
-        justify-content: center;
-        
-        img{
-            width: 100%;
-        }
-    }
-
-    h1{
-        font-family: "Goldman";
-        font-weight: 700;
-        grid-area: 1 / 2 / 2 / 6;
-    }
+    align-items: center;
+    justify-content:space-around;
     
-    h2{
-        font-family: "Goldman";
-        font-weight: 400;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        grid-area: 2 / 1 / 3 / 6;
-    }
+    background-color: rgba(0, 0, 0, 0.603);
+    border-radius: 50px 50px;
+    
+    top: 1rem;
+    color: white;
+    height: 50%;
+    width: 100%;
     
     ul{
-        grid-area: 3 / 2 / 4 / 5;
+        position: static;
+        top:0;
+        margin: 2rem;
         display: flex;
-        justify-content: center;
-        align-items: center;
         padding: 0;
-
         li{
-            margin: 0 0.5rem;
+            font-weight: 600;
+            margin: 0 1rem;
             list-style-type: none;
         }
-    }
-
-    .carrito{
-        grid-area: 3 / 5 / 4 / 6;
-        border: 5px;
-        border-radius: 50px 50px;
-        display: flex;
-        height: 100%;
-        width: 70%;
-        cursor:pointer;
     }
 };
 
