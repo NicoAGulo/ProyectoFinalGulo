@@ -2,6 +2,7 @@ import './Cart.css'
 
 
 
+
 function Carrito({count}){
     return(
     <div className='cart-container'>

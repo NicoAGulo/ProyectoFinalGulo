@@ -1,21 +1,30 @@
 import Productos from "./productos";
+import Item from "../../ItemContainer/Item";
 
 
-function ListaProductos (){
+const ListaProductos = () => {
+
     return(
-        <ul>
+        <div className="product-list">
+            {Productos.map((producto)=>(
+                <Item
 
-            {Productos.map(producto=>(
-                
-                
-                <li key={producto.id}>
-                <h2>{producto.nombre}</h2>
-                <img src={producto.rutaImagen} alt={producto.nombre} />
-                <p>${producto.precio}</p>
-                </li>
+                key={producto.id}
+                nombre={producto.nombre}
+                ubicacion={producto.ubicacion}
+                altText={producto.altText}
+
+
+
+                // onClick={() => console.log(producto.label)}
+                // bgColor={producto.}
+
+
+                />
+
 
             ))}
-        </ul>
+        </div>
     )
 }
 

@@ -17,6 +17,7 @@ function App() {
         <h2>Captura el espacio</h2>
 
     <NavbarComponente />
+    
 
 
 

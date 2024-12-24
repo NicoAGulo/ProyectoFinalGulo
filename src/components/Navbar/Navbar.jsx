@@ -12,9 +12,8 @@ function NavbarComponente(){
             
         
         <ul>
-        <li>Accesorios</li>
         <li>Drones</li>
-        <li>Inicio</li>
+        <li>Accesorios</li>
         <li>Nosotros</li>
         <li>Contacto</li>
         </ul>
