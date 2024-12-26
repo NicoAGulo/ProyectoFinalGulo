@@ -1,14 +1,12 @@
-import './Items.css'
-
 function Items({prod}){
     return(
-        <div>
+        <div className='GrillaProductos'>
         {prod.map((item)=>(
             <article
             key={item.id}
             itemScope
 
-            className='Card'
+            className="Card"
             >
                 <h4 itemprop="name">{item.nombre}
                 </h4>
@@ -18,12 +16,18 @@ function Items({prod}){
                     src={item.rutaImagen} itemprop="image" alt={"Foto de Drone" + item.nombre}/>
                 </figure>
 
-                <span className='Tipo' itemprop="type">Clase: {item.tipo}</span>
+                <div>
+                <label>Clase </label>
+                <span className='Tipo' itemprop="type">{item.tipo}</span>
+                </div>
+                
+                <span className='PrecioArticulo' itemprop="price">${item.precio}</span>
 
+                <div>
                 <button className='BotonAgregarACarrito'>+</button>
                 <button className='BotonSacarDeCarrito'>-</button>
+                </div>
 
-                <span className='PrecioArticulo' itemprop="price">${item.precio}</span>
 
             </article>
         ))}
