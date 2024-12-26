@@ -66,8 +66,8 @@ h3{
   }
 }
 
-.card {
-  padding: 2em;
+.Card {
+  background-color: #8888886c;
 }
 
 .read-the-docs {

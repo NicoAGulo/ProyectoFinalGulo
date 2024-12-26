@@ -1,6 +1,9 @@
 // import { useState } from 'react'
 import NavbarComponente from './components/Navbar/Navbar'
 import './App.css'
+import Items from './components/Feature/itemListContainer/ItemListContainer'
+import Productos from './Products/drones/Productos'
+
 
 
 
@@ -17,7 +20,8 @@ function App() {
         <h2>Captura el espacio</h2>
 
     <NavbarComponente />
-    
+
+    <Items prod={Productos}/>
 
 
 

@@ -1,4 +1,4 @@
-import Carrito from '../CartWidget/cart';
+import Carrito from '../cart-widget/Cart'
 import './navbar.css'
 
 function NavbarComponente(){
