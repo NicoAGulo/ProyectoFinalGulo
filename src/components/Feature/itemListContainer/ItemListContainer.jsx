@@ -1,7 +1,14 @@
-function Items({prod}){
+function Items({prod, filtro}){
+
+    const productosFiltrados = prod.filter((item) =>{
+        if(filtro === 'all') return true;
+        return item.tipo === filtro;
+    })
+
+
     return(
         <div className='GrillaProductos'>
-        {prod.map((item)=>(
+        {productosFiltrados.map((item)=>(
 
             <article
             key={item.id}

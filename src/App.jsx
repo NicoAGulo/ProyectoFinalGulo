@@ -1,15 +1,16 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import NavbarComponente from './components/Navbar/Navbar'
 import './App.css'
 import Items from './components/Feature/itemListContainer/ItemListContainer'
 import Productos from './Products/drones/Productos'
+import Filtros from './components/Feature/filtros/Filtros'
 
 
 
 
 function App() {
-  // const [count, setCount] = useState(0)
-
+  const [opcionSeleccionada, setOpcionSeleccionada]= useState('f-all');
+  
   return (
     <>
     <div className="logo-navbar">
@@ -21,10 +22,9 @@ function App() {
 
     <NavbarComponente />
 
-    <Items prod={Productos}/>
+    <Filtros opcionSeleccionada={opcionSeleccionada} setOpcionSeleccionada={setOpcionSeleccionada}/>
 
-
-
+    <Items prod={Productos} filtro={opcionSeleccionada}/>
 
     </>
   
