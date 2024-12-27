@@ -1,5 +1,7 @@
 .bloque-navbar{
 
+    z-index: 100;
+
     display: flex;
     position: sticky;
 

@@ -46,10 +46,11 @@ h3{
 
 h4{
   font-size: large;
-  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 2rem;
   margin: 0;
   color: rgb(219, 146, 50);
-  font-weight: 900;
+  font-family: cursive;
 }
 
 /* .logo:hover {
@@ -78,15 +79,40 @@ h4{
   display: block;
   position: relative;
   background-color: #ffffff6c;
+  border-radius:22px ;
   align-items: center;
   justify-content: center;
-  
+
   img{
+    border-radius: 22px;
     display: block;
     position: relative;
     width: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  img:hover{
+    transform: scale(1.1);
   }
 }
+
+.Card.normal {
+    background-color: #ffffffbd;
+}
+
+.Card.pocket {
+    background-color: #ccffe0bd;
+    h4{
+      color: black;
+    }
+  }
+  
+  .Card.carga {
+    background-color: #ffd4ccbd;
+    h4{
+      color: rgb(71, 58, 184);
+    }
+  }
 
 .GrillaProductos{
   display: grid;

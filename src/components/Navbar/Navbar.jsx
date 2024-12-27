@@ -1,5 +1,6 @@
 import Carrito from '../cart-widget/Cart'
 import './navbar.css'
+import Filtros from '../Feature/filtros/Filtros'
 
 function NavbarComponente(){
 
@@ -19,8 +20,9 @@ function NavbarComponente(){
         </ul>
         
         <Carrito />
-        </div>
 
+        </div>
+        <Filtros/>
         </>
     )
 }

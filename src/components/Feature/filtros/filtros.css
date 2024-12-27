@@ -1,0 +1,8 @@
+
+.nav-filtros{
+    display: block;
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.911);
+    color: white;
+    margin: 1rem;
+}
