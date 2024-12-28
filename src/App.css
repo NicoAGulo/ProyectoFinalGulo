@@ -79,15 +79,17 @@ h4{
   display: block;
   position: relative;
   background-color: #ffffff6c;
-  border-radius:22px ;
+  border-radius:22px;
+  
   align-items: center;
   justify-content: center;
+  max-width: fit-content;
 
   img{
     border-radius: 22px;
-    display: block;
     position: relative;
     width: 100%;
+    max-width: fit-content;
     transition: transform 0.3s ease;
   }
 
@@ -115,6 +117,7 @@ h4{
   }
 
 .GrillaProductos{
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap:0.5rem;

@@ -6,8 +6,8 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  background-image: url(../src/assets/img/fondo-droneosfera.png);
-  background-size: contain;
+  background-image: url(../src/assets/img/fondo-dronosfera.jpg);
+  background-repeat: repeat-y;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
