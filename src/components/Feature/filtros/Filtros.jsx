@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './filtros.css'
 
 const Filtros = ({opcionSeleccionada, setOpcionSeleccionada}) =>{
@@ -6,19 +7,28 @@ const Filtros = ({opcionSeleccionada, setOpcionSeleccionada}) =>{
         setOpcionSeleccionada(e.target.value);
     }
 
+    // useEffect(()=>{
+    //     const fPred = document.getElementById('filtroPredeterminado');
+    //     if (filtroPredeterminado){
+    //         filtroPredeterminado.checked=true;
+    //     }
+
+    // })
+
     return(
         <div className="nav-filtros">
+            
             <label>Ver Todos</label>
-            <input type="radio" name="filter_background"  checked={opcionSeleccionada === 'all'} onChange={handleOptionChange} value="all"/>
+            <input id='filtroPredeterminado' type="radio" name="filter_background" onChange={handleOptionChange} value="all"/>
 
             <label>Ver Drones Normales</label>
-            <input type="radio" name="filter_background" checked={opcionSeleccionada === 'normal'} onChange={handleOptionChange} value="normal"/>
+            <input type="radio" name="filter_background" onChange={handleOptionChange} value="normal"/>
             
             <label>Ver Drones Pocket</label>
-            <input type="radio" name="filter_background" checked={opcionSeleccionada === 'pocket'} onChange={handleOptionChange} value="pocket"/>
+            <input type="radio" name="filter_background" onChange={handleOptionChange} value="pocket"/>
 
             <label>Ver Drones de Carga</label>
-            <input type="radio" name="filter_background" checked={opcionSeleccionada === 'carga'} onChange={handleOptionChange} value="carga"/>
+            <input type="radio" name="filter_background" onChange={handleOptionChange} value="carga"/>
 
         </div>
     )
