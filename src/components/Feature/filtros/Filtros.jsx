@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import './filtros.css'
+import './filtros.css';
+
 
 const Filtros = ({opcionSeleccionada, setOpcionSeleccionada}) =>{
 
@@ -7,13 +7,6 @@ const Filtros = ({opcionSeleccionada, setOpcionSeleccionada}) =>{
         setOpcionSeleccionada(e.target.value);
     }
 
-    // useEffect(()=>{
-    //     const fPred = document.getElementById('filtroPredeterminado');
-    //     if (filtroPredeterminado){
-    //         filtroPredeterminado.checked=true;
-    //     }
-
-    // })
 
     return(
         <div className="nav-filtros">

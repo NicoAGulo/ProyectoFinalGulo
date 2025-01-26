@@ -9,7 +9,7 @@ import Filtros from './components/Feature/filtros/Filtros'
 
 
 function App() {
-  const [opcionSeleccionada, setOpcionSeleccionada]= useState('f-all');
+  const [opcionSeleccionada, setOpcionSeleccionada]= useState('all');
   
   return (
     <>
