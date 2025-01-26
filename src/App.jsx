@@ -1,32 +1,31 @@
-import { useState } from 'react'
-import NavbarComponente from './components/Navbar/Navbar'
 import './App.css'
-import Items from './components/Feature/itemListContainer/ItemListContainer'
-import Productos from './Products/drones/Productos'
-import Filtros from './components/Feature/filtros/Filtros'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+import NavbarComponente from './components/Navbar/Navbar'
+import Store from './components/Store/Store'
+import RoutingError from './components/Routing-Error/RoutingError'
 
 
 
 function App() {
-  const [opcionSeleccionada, setOpcionSeleccionada]= useState('all');
+  
   
   return (
-    <>
+    <BrowserRouter>
     <div className="logo-navbar">
                 <img src="../src/assets/img/drone-3.png" alt="logo-drone"/>
                 </div>
                 
         <h1>Droneosfera</h1>
         <h2>Captura el espacio</h2>
-
     <NavbarComponente />
 
-    <Filtros opcionSeleccionada={opcionSeleccionada} setOpcionSeleccionada={setOpcionSeleccionada}/>
+    <Routes>
+      <Route path="/" element={<Store/>}/>
+      <Route path="*" element={<RoutingError/>}/>
+    </Routes>
 
-    <Items prod={Productos} filtro={opcionSeleccionada}/>
-
-    </>
+    </BrowserRouter>
   
 
 )

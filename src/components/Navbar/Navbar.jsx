@@ -12,11 +12,11 @@ function NavbarComponente(){
             
         
         <ul>
-
-        <li>Drones</li>
-        <li>Accesorios</li>
+        <li>Inicio</li>
+        <li>Productos</li>
         <li>Nosotros</li>
         <li>Contacto</li>
+        <li></li>
         
         </ul>
         
