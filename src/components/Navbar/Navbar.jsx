@@ -1,5 +1,6 @@
 import Carrito from '../cart-widget/Cart'
 import './navbar.css'
+import { Link } from 'react-router-dom';
 
 function NavbarComponente(){
 
@@ -12,12 +13,10 @@ function NavbarComponente(){
             
         
         <ul>
-        <li>Inicio</li>
-        <li>Productos</li>
-        <li>Nosotros</li>
-        <li>Contacto</li>
-        <li></li>
-        
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/productos">Productos</Link></li>
+            <li><Link to="/nosotros">Nosotros</Link></li>
+            <li><Link to="/contacto">Contacto</Link></li>        
         </ul>
         
         <Carrito />
