@@ -14,8 +14,6 @@ export default function Store(){
             <Filtros opcionSeleccionada={opcionSeleccionada} setOpcionSeleccionada={setOpcionSeleccionada}/>
 
             <Items prod={Productos} filtro={opcionSeleccionada}/>
-
-            <ItemDetallado/>
         </>
     )
 }
