@@ -1,32 +1,32 @@
-function ItemDetallado({prod}){
+function Item({nombre, precio, tipo, rutaImagen}){
     return(
-        <div className='divDetalle'>
-            <article key={prod.id}>
-                <h4 itemprop="name">{prod.nombre}</h4>
+        <article className={`Card ${tipo}`}>
+
+                <h4 itemprop="name">{nombre}</h4>
 
                 <figure>
-                    <img className="imagenDron"
-                    src={prod.rutaImagen} itemprop="image" alt={"Foto de Drone" + prod.nombre}/>
+                    <img 
+                    className="imagenDron"
+                    src={rutaImagen} 
+                    itemprop="image" 
+                    alt={"Foto de Drone" + nombre}
+                    />
                 </figure>
 
                 <div>
-                <label>Clase </label>
-                <span className='Tipo' itemprop="type">{prod.tipo}</span>
+                    <label>Clase </label>
+                    <span className='Tipo' itemprop="type">{tipo}</span>
                 </div>
 
-                <span className='PrecioArticulo' itemprop="price">${prod.precio}</span>
-
-                <details>{prod.detail}</details>
+                <span className='PrecioArticulo' itemprop="price">${precio}</span>
 
                 <div>
-                <button className='BotonAgregarACarrito'>+</button>
-                <button className='BotonSacarDeCarrito'>-</button>
+                    <button className='BotonAgregarACarrito'>+</button>
+                    <button className='BotonSacarDeCarrito'>-</button>
                 </div>
 
-
-            </article>
-        </div>
+        </article>
     )
 }
 
-export default ItemDetallado
+export default Item

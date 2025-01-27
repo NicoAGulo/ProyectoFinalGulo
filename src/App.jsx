@@ -17,12 +17,13 @@ function App() {
 
       
     <BrowserRouter className="browser-router">
-    <div className="logo-navbar">
-                <img src="../src/assets/img/drone-3.png" alt="logo-drone"/>
-                </div>
+      <div className="logo-navbar">
+        <img src="../src/assets/img/drone-3.png" alt="logo-drone"/>
+      </div>
                 
-        <h1>Droneosfera</h1>
-        <h2>Captura el espacio</h2>
+      <h1>Droneosfera</h1>
+      <h2>Captura el espacio</h2>
+
     <NavbarComponente />
 
     <Routes>
