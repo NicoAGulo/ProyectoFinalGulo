@@ -7,6 +7,7 @@ import Store from './components/Pages/Store/Store'
 import Nosotros from './components/Pages/Nosotros/Nosotros'
 import RoutingError from './components/Pages/Routing-Error/RoutingError'
 import Contacto from './components/Pages/Contacto/Contacto'
+import DetalleProducto from './components/Pages/DetalleProducto/DetalleProducto'
 
 
 
@@ -29,6 +30,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Inicio/>}/>
       <Route path="/productos" element={<Store/>}/>
+      <Route path="/productos/:id" element={<DetalleProducto/>}/>
       <Route path="/nosotros" element={<Nosotros/>}/>
       <Route path="/contacto" element={<Contacto/>}/>
 

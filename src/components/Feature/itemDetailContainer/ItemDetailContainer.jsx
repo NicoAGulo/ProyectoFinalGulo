@@ -1,16 +1,19 @@
-function Item({nombre, precio, tipo, rutaImagen}){
+import { Link } from "react-router-dom"
+
+function Item({id, nombre, precio, tipo, rutaImagen}){
     return(
         <article className={`Card ${tipo}`}>
-
-                <h4 itemprop="name">{nombre}</h4>
+                    <h4 itemprop="name">{nombre}</h4>
 
                 <figure>
+                    <Link to={`/productos/${id}`}>
                     <img 
                     className="imagenDron"
                     src={rutaImagen} 
                     itemprop="image" 
                     alt={"Foto de Drone" + nombre}
                     />
+                    </Link>
                 </figure>
 
                 <div>
