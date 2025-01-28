@@ -1,0 +1,14 @@
+img{
+    border-color: rgba(0, 0, 0, 0.575);
+    border-radius: 1rem;
+    border-style:double;
+    border-width: 10%;
+}
+
+p{
+    color:white;
+}
+
+.contenedor-detail{
+    background-color: rgba(63, 63, 63, 0.438);
+}
