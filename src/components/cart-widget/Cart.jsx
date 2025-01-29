@@ -1,12 +1,14 @@
-import { useState } from 'react';
 import './Cart.css';
 
-import ListaAgregados from './CartArray/ListaAgregados';
+import React, { useContext, useState } from 'react';
+import { listadoContext } from './CartFeatures/ListaAgregados';
 
-const carro=[];
+const count=0;
 
 
-function Carrito({count}){
+function Carrito(){
+
+    const {cart, deleteFromCart}=useContext(listadoContext);
 
     const [carritoVisible, setCarritoVisible]= useState(false);
 
@@ -23,17 +25,34 @@ function Carrito({count}){
     return(
     <div className={'cart-container-'+carritoVisible}>
         <img src="../src/assets/img/carrito.png" alt="carrito" className='carrito-simbolo' onClick={handleCarritoOn}/>
-        <span className='cart-count'>0</span>
+        <span className='cart-count'>{cart.length}</span>
 
         <section className={'productos-en-carrito-'+carritoVisible}>
             <button onClick={handleCarritoOff}>← Volver →</button>
             <ul className='listado-productos-en-carrito'>
-                {/* Map de carro */}
-                {/* <ListaAgregados/> */}
+                    {cart.map((item) => {
+                        console.log(item.rutaImagen);
+                        return (
+                            <li key={item.cartId} className='producto-carrito-li'>
+                                <div className="div-li">
 
-            </ul>
+                                    <div className="div-img">
+
+                                        <img 
+                                            className="imagen-en-carrito"
+                                            src={"/"+item.rutaImagen}
+                                            itemProp="image"
+                                            alt={"Foto de Drone " + item.nombre}
+                                        />
+                                    </div>
+                                </div>
+                                {item.nombre} - ${item.precio}
+                                <button onClick={() => deleteFromCart(item.cartId)}>Eliminar</button>
+                            </li>
+                        );
+                    })}
+                </ul>
         </section>
-    
     </div>
 )}
 

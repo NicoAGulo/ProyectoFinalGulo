@@ -1,3 +1,4 @@
+import React from "react";
 import Item from "../itemDetailContainer/ItemDetailContainer";
 
 function Items({prod, filtro}){
@@ -6,12 +7,12 @@ function Items({prod, filtro}){
         if(filtro === 'all') return true;
         return p.tipo === filtro;
     })
-
     return(
         <div className='GrillaProductos'>
-        {productosFiltrados.map((item)=>(
-            <Item key={item.id} {...item}/>
-        ))}
+
+        {productosFiltrados.map((item, index) => {
+                return <Item key={item.id} {...item} index={index} />;
+            })}
         </div>
     )
 }

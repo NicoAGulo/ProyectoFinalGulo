@@ -71,8 +71,42 @@
     color: rgb(0, 0, 255);
 }
 
+.productos-en-carrito-true .listado-productos-en-carrito li{
+    display: block;
+    position: relative;
+    width: 100%;
 
+    margin: 0;
+    padding: 0;
 
+    align-items: left;
+    text-align: start;
+
+    color: rgb(0, 0, 255);
+}
+
+.div-li{
+    /* display: block; */
+    position: relative;
+    color: aqua;
+}
+
+/* .div-img{
+    display: flex;
+    position:relative;
+    height: 100%;
+} */
+
+.div-img img{
+    display:inline-flex;
+    position:absolute;
+    right:0;
+}
+
+.imagen-en-carrito{
+    height: 3rem;
+
+}
 
 
 
