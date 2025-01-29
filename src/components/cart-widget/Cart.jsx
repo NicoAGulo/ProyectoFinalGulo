@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import './Cart.css'
+import './Cart.css';
+
+import ListaAgregados from './CartArray/ListaAgregados';
 
 const carro=[];
 
@@ -27,11 +29,8 @@ function Carrito({count}){
             <button onClick={handleCarritoOff}>← Volver →</button>
             <ul className='listado-productos-en-carrito'>
                 {/* Map de carro */}
-                <li>hola</li>
-                <li>hole</li>
-                <li>holi</li>
-                <li>holo</li>
-                <li>holu</li>
+                {/* <ListaAgregados/> */}
+
             </ul>
         </section>
     
