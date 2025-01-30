@@ -3,13 +3,8 @@ import './Cart.css';
 import React, { useContext, useState } from 'react';
 import { listadoContext } from './CartFeatures/ListaAgregados';
 
-const count=0;
-
-
 function Carrito(){
-
-    const {cart, deleteFromCart}=useContext(listadoContext);
-
+    const {cart, deleteFromCart, total}=useContext(listadoContext);
     const [carritoVisible, setCarritoVisible]= useState(false);
 
     const handleCarritoOn = () =>{
@@ -29,29 +24,32 @@ function Carrito(){
 
         <section className={'productos-en-carrito-'+carritoVisible}>
             <button onClick={handleCarritoOff}>← Volver →</button>
+
+            <div className='div-total-cart'>
+                <span className={'cart-total-'+carritoVisible}>TOTAL: ${total}</span>
+            </div>
+
             <ul className='listado-productos-en-carrito'>
-                    {cart.map((item) => {
-                        console.log(item.rutaImagen);
-                        return (
-                            <li key={item.cartId} className='producto-carrito-li'>
-                                <div className="div-li">
+                {cart.map((item) => {
+                    console.log(item.rutaImagen);
+                    return (
+                        <li key={item.cartId} className='producto-carrito-li'>
+                            <div className="div-li">                                  
+                                    <img 
+                                        className="imagen-en-carrito"
+                                        src={"/"+item.rutaImagen}
+                                        itemProp="image"
+                                        alt={"Foto de Drone " + item.nombre}
+                                    />
+                                    <button onClick={() => deleteFromCart(item.cartId)}>Eliminar</button>
+                                    {item.nombre} - ${item.precio}
+                            </div>
+                        </li>
+                    );
+                })}
+            </ul>
 
-                                    <div className="div-img">
-
-                                        <img 
-                                            className="imagen-en-carrito"
-                                            src={"/"+item.rutaImagen}
-                                            itemProp="image"
-                                            alt={"Foto de Drone " + item.nombre}
-                                        />
-                                    </div>
-                                </div>
-                                {item.nombre} - ${item.precio}
-                                <button onClick={() => deleteFromCart(item.cartId)}>Eliminar</button>
-                            </li>
-                        );
-                    })}
-                </ul>
+            
         </section>
     </div>
 )}

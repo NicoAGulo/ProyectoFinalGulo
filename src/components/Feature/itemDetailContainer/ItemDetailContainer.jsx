@@ -4,17 +4,21 @@ import React, { useContext } from "react"
 import { listadoContext } from "../../cart-widget/CartFeatures/ListaAgregados"
 
 function Item({id, nombre, precio, tipo, rutaImagen}){
+    const {addToCart} = useContext(listadoContext);
 
-    const {addToCart, deleteFromCart} = useContext(listadoContext);
+
+    const handleAddToCart = async () => {
+        return new Promise((resolve) => {
+            addToCart({ id, nombre, precio, tipo, rutaImagen });
+            resolve();
+        });
+    };
 
 
-    const handleAddToCart=()=>{
-        addToCart({id, nombre, precio, tipo, rutaImagen})
-    }
     
-    const handleDeleteFromCart=(cartId)=>{
-        deleteFromCart(cartId)
-    }
+    // const handleDeleteFromCart=(cartId)=>{
+    //     deleteFromCart(cartId)
+    // }
 
     return(
         <article className={`Card ${tipo}`}>
@@ -39,8 +43,7 @@ function Item({id, nombre, precio, tipo, rutaImagen}){
                 <span className='PrecioArticulo' itemProp="price">${precio}</span>
 
                 <div>
-                    <button className='BotonAgregarACarrito' onClick={handleAddToCart}>+</button>
-                    <button className='BotonSacarDeCarrito' onClick={() => handleDeleteFromCart(id)}>-</button>
+                    <button className='BotonAgregarACarrito' onClick={handleAddToCart}>Agregar al carrito</button>
                 </div>
 
         </article>
