@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-
-export const db = getFirestore();
+import { db } from '../../main';
 
 const Productos = () => {
   const [productos, setProductos] = useState([]);
