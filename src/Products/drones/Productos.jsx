@@ -22,4 +22,4 @@ function TraerCollection() {
 
 TraerCollection();
 
-export { Productos };
+export default { Productos };
