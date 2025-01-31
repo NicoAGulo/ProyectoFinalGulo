@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+export const db = getFirestore();
 
 const Productos = () => {
   const [productos, setProductos] = useState([]);
