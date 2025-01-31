@@ -11,9 +11,24 @@ import RoutingError from './components/Pages/Routing-Error/RoutingError'
 import Contacto from './components/Pages/Contacto/Contacto'
 import DetalleProducto from './components/Pages/DetalleProducto/DetalleProducto'
 
-
+// import { getFirestore, doc, getDoc } from 'firebase/firestore'
+// import { useEffect } from 'react'
 
 function App() {
+  // const [data, setData]= useState({});
+
+  // const db= getFirestore();
+
+  // useEffect(()=>{
+  //   const itemRef = doc(db, "items", "saJYaCte9Ws6SB8pOKZR");
+
+  //   getDoc(itemRef).then(snapshot=>{
+  //     console.log(snapshot);
+  //     console.log(snapshot.data());
+  //     setData(snapshot.data());
+  //   })
+  // },[])
+
   
   
   return (
