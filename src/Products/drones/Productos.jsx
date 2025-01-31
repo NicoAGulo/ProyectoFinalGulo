@@ -1,25 +1,27 @@
-import { collection, getDocs, getFirestore } from "firebase/firestore"
-import { useEffect } from "react"
+import { useState, useEffect } from 'react';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
-let Productos = [];
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
-function TraerCollection() {
+const Productos = () => {
+  const [productos, setProductos] = useState([]);
+
   useEffect(() => {
-    const db = getFirestore();
-    const itemCollection = collection(db, "items");
-
-    getDocs(itemCollection).then(snapshot => {
-      Productos = snapshot.docs.map(docu => ({
-        id: docu.id,
-        ...docu.data()
+    const fetchData = async () => {
+      const querySnapshot = await db.collection('Items').get();
+      const itemsData = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data() 
       }));
-      console.log(Productos); // Para verificar que los datos se han actualizado correctamente
-    });
+      setProductos(itemsData);
+    };
+
+    fetchData();
   }, []);
 
-  return null; // No renderiza nada
-}
+  return null;
+};
 
-TraerCollection();
-
-export default { Productos };
+export default Productos;
