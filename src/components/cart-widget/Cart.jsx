@@ -19,7 +19,7 @@ function Carrito(){
 
     return(
     <div className={'cart-container-'+carritoVisible}>
-        <img src="../src/assets/img/carrito.png" alt="carrito" className='carrito-simbolo' onClick={handleCarritoOn}/>
+        <img src="/assets/img/carrito.png" alt="carrito" className='carrito-simbolo' onClick={handleCarritoOn}/>
         <span className='cart-count'>{cart.length}</span>
 
         <section className={'productos-en-carrito-'+carritoVisible}>

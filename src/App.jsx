@@ -35,7 +35,7 @@ function App() {
     <CartProvider>
       <BrowserRouter className="browser-router">
         <div className="logo-navbar">
-          <img src="../src/assets/img/drone-3.png" alt="logo-drone"/>
+          <img src="/assets/img/drone-3.png" alt="logo-drone"/>
         </div>
 
         <h1>Droneosfera</h1>
