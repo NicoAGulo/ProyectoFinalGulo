@@ -15,18 +15,20 @@
     color: white;
     height: 50%;
     width: 100%;
-    
-    ul{
+}
+
+.bloque-navbar ul{
         position: static;
         top:0;
         margin: 2rem;
         display: flex;
         padding: 0;
-        li{
+}
+
+.bloque-navbar ul li{
             font-weight: 600;
             margin: 0 1rem;
             list-style-type: none;
-        }
-    }
-};
+}
+
 
