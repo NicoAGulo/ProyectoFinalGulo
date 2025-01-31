@@ -1,39 +1,25 @@
-// import { collection, getDocs, getFirestore } from "firebase/firestore"
-// import { useEffect } from "react"
+import { collection, getDocs, getFirestore } from "firebase/firestore"
+import { useEffect } from "react"
 
-// function TraerCollection() {
+let Productos = [];
 
-//     useEffect(() => {
-//       const db = getFirestore();
-//       // creamos la referencia a la collection
+function TraerCollection() {
+  useEffect(() => {
+    const db = getFirestore();
+    const itemCollection = collection(db, "items");
 
-//       const itemCollection= collection(db,"items");
+    getDocs(itemCollection).then(snapshot => {
+      Productos = snapshot.docs.map(docu => ({
+        id: docu.id,
+        ...docu.data()
+      }));
+      console.log(Productos); // Para verificar que los datos se han actualizado correctamente
+    });
+  }, []);
 
-//       // traemos los datos
+  return null; // No renderiza nada
+}
 
-//       getDocs(itemCollection).then(snapshot=>snapshot.docs.map(docu=>
-//       {
-//         console.log(docu.data())
-//         console.log(docu.id)
-//       }
-//       ))
-//     },[])
-//   return (
-//     <div>TraerCollection</div>
-//   )
-// }
+TraerCollection();
 
-// export default TraerCollection
-
-
-
-const Productos=[
-    {id:1, nombre:"Drone 1001X", precio:1000, tipo:"normal", rutaImagen:`../src/assets/img/drone-blanco.png`, altText: "Drone Blanco 1", detail:"Dron de excelente calidad listo para vuelos normales"},
-    {id:2, nombre:"Drone 1004X", precio:1340, tipo:"normal", rutaImagen:`../src/assets/img/drone-rojo.png`, altText: "Drone Rojo 1", detail:"Dron de excelente calidad listo para vuelos normales"},
-    {id:3, nombre:"Drone 200Z", precio:980, tipo:"pocket", rutaImagen:`../src/assets/img/drone-pequeño.png`, altText: "Drone Pequeño 1", detail:"Dron de excelente calidad listo para realizar tomas en espacios reducidos"},
-    {id:4, nombre:"Drone 35W", precio:2020, tipo:"carga", rutaImagen:`../src/assets/img/drone-carga.png`, altText: "Drone Carga 1", detail:"Dron de excelente calidad listo para soportar carga de hasta 4kg"}
-];
-
-
-
-export default Productos
+export { Productos };
