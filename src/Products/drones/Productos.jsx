@@ -1,23 +1,13 @@
-import { useState, useEffect } from 'react';
 import { db } from '../../main';
+import { collection, getDoc, getDocs } from 'firebase/firestore';
 
-const Productos = () => {
-  const [productos, setProductos] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const querySnapshot = await db.collection('Items').get();
-      const itemsData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data() 
-      }));
-      setProductos(itemsData);
-    };
+const getProductos = async () => {
 
-    fetchData();
-  }, []);
-
-  return null;
+  const itemCollection = collection(db,'Items');
+  const querySnapshot= await getDocs(itemCollection);  
+  const itemsData = querySnapshot.docs.map((doc) => doc.data());
+      return itemsData;
 };
 
-export default Productos;
+export default getProductos;
